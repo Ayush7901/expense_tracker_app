@@ -32,7 +32,7 @@ class DisplayCard extends StatelessWidget {
                     child: Text(
                       'Name will come here',
                       textAlign: TextAlign.left,
-                      softWrap: true,
+                      overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
                   ),
@@ -52,7 +52,7 @@ class DisplayCard extends StatelessWidget {
                 'date will come here',
                 textAlign: TextAlign.left,
                 softWrap: true,
-                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
