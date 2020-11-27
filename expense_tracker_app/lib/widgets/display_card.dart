@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../icons/my_flutter_app_icons.dart';
 
 class DisplayCard extends StatelessWidget {
   @override
@@ -7,38 +8,53 @@ class DisplayCard extends StatelessWidget {
       elevation: 10,
       child: Container(
         margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(
-            200,
-          ),
-        ),
         height: 75,
         padding: EdgeInsets.all(10),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            CircleAvatar(
-              child: Text('\$'),
+            Expanded(
+              flex: 2,
+              child: Align(
+                alignment: Alignment.center,
+                child: CircleAvatar(
+                  child: Text('\₹ 23'),
+                ),
+              ),
             ),
-            SizedBox(
-              width: 10,
+            Expanded(
+              flex: 6,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Name will come here',
+                      textAlign: TextAlign.left,
+                      softWrap: true,
+                      maxLines: 1,
+                    ),
+                  ),
+                  Row(
+                    //mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Icon(Icons.timer),
+                      Icon(MyFlutterApp.rupee),
+                    ],
+                  )
+                ],
+              ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Text('Name'),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Icon(Icons.monetization_on),
-                    Icon(Icons.timer)
-                  ],
-                )
-              ],
+            Expanded(
+              flex: 1,
+              child: Text(
+                'date will come here',
+                textAlign: TextAlign.left,
+                softWrap: true,
+                maxLines: 1,
+              ),
             ),
-            SizedBox(
-              width: 220,
-            ),
-            Text('date')
           ],
         ),
       ),
